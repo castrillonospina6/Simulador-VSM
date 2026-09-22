@@ -166,24 +166,14 @@ tests/                    Tests del núcleo y smoke test de GUI
 `models`, `engine`, `cases` y `evaluation` no dependen de PyQt5: son el "cerebro"
 y se pueden reutilizar tal cual en una versión web o en un backend.
 
-## Nota honesta sobre la "red neuronal" de evaluación
-
-Una red neuronal necesita datos de entrenamiento, y no existe un dataset de
-"VSMs correctos vs. incorrectos". La ruta realista:
-
-1. Motor de reglas determinístico contra un estado de referencia calculable (**ya implementado**).
-2. Cada partida jugada genera datos reales (mapa, puntaje, errores).
-3. Con esos datos, entrenar un modelo (scikit-learn / red pequeña) que refine la
-   calificación, o usar un LLM para retroalimentación cualitativa tipo coach.
-
 ## Hoja de ruta
 
 - [x] Motor de cálculo + canvas con métricas en vivo
 - [x] Generador de casos paramétrico (6 niveles, ruido de unidades, símbolos especiales, semilla)
 - [x] 23 casos en 6 niveles con análisis de referencia y oportunidades de mejora
 - [x] Evaluación por reglas con retroalimentación
-- [ ] **Estado futuro**: el estudiante propone mejoras (supermercado, pull, flujo continuo, combinar procesos) y se evalúa el impacto en lead time/PCE
-- [ ] Niveles/cinturones completos (Junior → … → Negro Master) con XP y desbloqueo
-- [ ] Ramificaciones en el flujo (no solo lineal)
-- [ ] Exportar VSM a imagen/PDF
+- [x] **Estado futuro**: el estudiante propone mejoras (supermercado, pull, flujo continuo, combinar procesos) y se evalúa el impacto en lead time/PCE
+- [x] Niveles/cinturones completos (Junior → … → Negro Master) con XP y desbloqueo
+- [x] Ramificaciones en el flujo (no solo lineal)
+- [x] Exportar VSM a imagen/PDF
 - [ ] Retroalimentación con LLM y modelo entrenado con partidas reales
